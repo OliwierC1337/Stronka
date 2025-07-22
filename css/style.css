@@ -248,3 +248,67 @@ footer {
   font-size: 14px;
   color: #999;
 }
+/* === RESPONSYWNY NAVBAR === */
+.desktop-only {
+  display: flex;
+}
+.mobile-only {
+  display: none;
+}
+
+/* Hamburger ikona */
+.mobile-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobilne menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a112b;
+  padding: 20px;
+  gap: 10px;
+}
+
+
+
+/* Pojawia się na małych ekranach */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+.mobile-menu a {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  text-decoration: none;
+  border-radius: 12px;
+  width: 90%;
+  display: block;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Zachowujemy kolory jak w desktopie */
+.mobile-menu .btn.blue    { background-color: #00e0ff; }
+.mobile-menu .btn.pink    { background-color: #ff00d4; }
+.mobile-menu .btn.orange  { background-color: #ff9100; }
+.mobile-menu .btn.gradient {
+  background: linear-gradient(45deg, #ff00d4, #ff9100);
+}
+
+.mobile-menu a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff00d4, 0 0 25px #00e0ff;
+}
+
