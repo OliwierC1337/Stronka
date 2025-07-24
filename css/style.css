@@ -16,40 +16,46 @@ body {
 
 /* === NAVBAR === */
 .navbar {
-
-  position: relative;
+  position: sticky;
   top: 0;
-  z-index: 100;
-
+  z-index: 999;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px 30px;
   background-color: #1a112b;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  gap: 40px;
+
 }
 
-.nav-buttons a,
-.call-button a {
-  font-weight: bold;
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
   color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
   text-decoration: none;
-  margin: 0 5px;
-  display: inline-block;
-  transition: transform 0.2s;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.2s;
 }
 
-.nav-buttons a:hover,
-.call-button a:hover {
-  transform: scale(1.05);
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.btn.blue { background-color: #00e0ff; color: white; }
-.btn.pink { background-color: #ff00d4; color: white; }
-.btn.orange { background-color: #ff9100; color: white; }
+.nav-logo img {
+  max-height: 65px;
 
+}
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+  }
 .btn.gradient {
   background: linear-gradient(45deg, #ff00d4, #ff9100);
   color: white;
@@ -248,71 +254,80 @@ footer {
   font-size: 14px;
   color: #999;
 }
-/* === RESPONSYWNY NAVBAR === */
-.desktop-only {
-  display: flex;
-}
-.mobile-only {
-  display: none;
-}
-
-/* Hamburger ikona */
-.mobile-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Mobilne menu */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: #1a112b;
-  padding: 20px;
-  gap: 10px;
-}
-
 
 @media screen and (max-width: 768px) {
   .map-section {
     background-attachment: scroll !important;
   }
 }
-/* Pojawia się na małych ekranach */
+/* === MOBILE NAVBAR === */
+.mobile-navbar {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .desktop-only {
+  .navbar {
     display: none;
   }
-  .mobile-only {
+
+  .mobile-navbar {
     display: block;
+    background-color: #1a112b;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .mobile-nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-logo {
+    height: 50px;
+  }
+
+  .burger {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    animation: slideDown 0.5s ease forwards;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:nth-child(1) { background-color: #00e0ff; }
+  .mobile-menu a:nth-child(2) { background-color: #ff00d4; }
+  .mobile-menu a:nth-child(3) { background-color: #ff9100; }
+  .mobile-menu a:nth-child(4) {
+    background: linear-gradient(45deg, #ff00d4, #ff9100);
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 }
-.mobile-menu a {
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: white;
-  padding: 12px 20px;
-  margin: 8px 0;
-  text-decoration: none;
-  border-radius: 12px;
-  width: 90%;
-  display: block;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
 
-/* Zachowujemy kolory jak w desktopie */
-.mobile-menu .btn.blue    { background-color: #00e0ff; }
-.mobile-menu .btn.pink    { background-color: #ff00d4; }
-.mobile-menu .btn.orange  { background-color: #ff9100; }
-.mobile-menu .btn.gradient {
-  background: linear-gradient(45deg, #ff00d4, #ff9100);
-}
-
-.mobile-menu a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff00d4, 0 0 25px #00e0ff;
-}
 

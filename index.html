@@ -9,26 +9,38 @@
 
 <body>
 <header class="navbar">
-  <div class="nav-buttons desktop-only">
-    <a href="#uslugi" class="btn blue">Usługi</a>
-    <a href="#galeria" class="btn pink">Galeria</a>
-    <a href="#lokalizacja" class="btn orange">Lokalizacja</a>
-  </div>
-  <div class="call-button desktop-only">
-    <a href="tel:123456789" class="btn gradient">📞 Zadzwoń teraz</a>
+  <div class="nav-left">
+    <a href="#onas">O nas</a>
+    <a href="#oferta">Oferta</a>
   </div>
 
-  <!-- Ikona hamburgera -->
-  <div class="mobile-toggle mobile-only" onclick="toggleMobileMenu()">☰</div>
+  <div class="nav-logo">
+    <a href="#"><img src="img/logo.png" alt="Logo"></a>
+  </div>
+
+  <div class="nav-right">
+    <a href="#realizacje">Realizacje</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+
+
+</header>
+<header class="mobile-navbar">
+  <div class="mobile-nav-top">
+    <a href="#"><img src="img/logo.png" alt="Logo" class="mobile-logo"></a>
+    <div class="burger" onclick="toggleMobileMenu()">
+      <span id="burger-icon">☰</span>
+      <span id="close-icon" style="display: none;">✖</span>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu">
+    <a href="#onas">O nas</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 </header>
 
-<!-- Menu mobilne -->
-<div id="mobileMenu" class="mobile-menu">
-  <a href="#uslugi" class="btn blue">Usługi</a>
-  <a href="#galeria" class="btn pink">Galeria</a>
-  <a href="#lokalizacja" class="btn orange">Lokalizacja</a>
-  <a href="tel:123456789" class="btn gradient">📞 Zadzwoń teraz</a>
-</div>
 
 <section class="hero">
   <video autoplay muted loop playsinline class="hero-bg">
@@ -101,15 +113,28 @@
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    const burgerIcon = document.getElementById("burger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    const isOpen = menu.style.display === "flex";
+
+    menu.style.display = isOpen ? "none" : "flex";
+    burgerIcon.style.display = isOpen ? "inline" : "none";
+    closeIcon.style.display = isOpen ? "none" : "inline";
   }
 
   window.addEventListener("resize", () => {
     const menu = document.getElementById("mobileMenu");
+    const burgerIcon = document.getElementById("burger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
     if (window.innerWidth > 768) {
       menu.style.display = "none";
+      burgerIcon.style.display = "inline";
+      closeIcon.style.display = "none";
     }
   });
 </script>
+
 </body>
 </html>
