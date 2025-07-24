@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+<script src="js/app.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,30 +62,41 @@
 
 <main>
   <section id="upgrade" class="upgrade-section">
-    <h2><span style="color: white; font-weight: bold; font-size: 32px;">WYBIERZ SWÓJ <span style="color:#00f0ff">UPGRADE</span></span></h2>
+    <h2>
+    <span style="color: white; font-weight: bold; font-size: 32px;">
+      WYBIERZ SWÓJ <span style="color:#00f0ff">UPGRADE</span>
+    </span>
+    </h2>
+
     <div class="upgrade-grid">
-      <div class="upgrade-box">
+      <div class="upgrade-box" onclick="showSubUpgrades('ceramic')">
         <div class="icon">🛡️</div>
         <h3><strong>POWŁOKI CERAMICZNE</strong></h3>
         <p>Najwyższy połysk i ochrona.<br>Zabezpiecz blask salonu na lata.</p>
       </div>
-      <div class="upgrade-box">
+
+      <div class="upgrade-box" onclick="showSubUpgrades('interior')">
         <div class="icon">🚗</div>
         <h3><strong>CZYSZCZENIE WNĘTRZA</strong></h3>
         <p>Skrupulatne czyszczenie wnętrza.<br>Pozostawiamy każdą powierzchnię nieskazitelnie czystą.</p>
       </div>
-      <div class="upgrade-box">
+
+      <div class="upgrade-box" onclick="showSubUpgrades('paint')">
         <div class="icon">✨</div>
         <h3><strong>KOREKTA LAKIERU</strong></h3>
         <p>Usuń zmatowienia, zarysowania i niedoskonałości.</p>
       </div>
-      <div class="upgrade-box">
+
+      <div class="upgrade-box" onclick="showSubUpgrades('full')">
         <div class="icon">🏆</div>
         <h3><strong>PEŁNE PAKIETY DETAILINGU</strong></h3>
         <p>Kompletny pakiet.<br>Perfekcja wewnątrz i na zewnątrz.</p>
       </div>
     </div>
+
+    <div id="sub-upgrade-section" class="sub-upgrade-section hidden"></div>
   </section>
+
   <section class="map-section">
     <div class="map-container">
       <div class="map-box">
@@ -110,31 +122,7 @@
 <footer>
   <p>&copy; 2025 Chmiel i Chrom Detailing. Wszelkie prawa zastrzeżone.</p>
 </footer>
-<script>
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const burgerIcon = document.getElementById("burger-icon");
-    const closeIcon = document.getElementById("close-icon");
 
-    const isOpen = menu.style.display === "flex";
-
-    menu.style.display = isOpen ? "none" : "flex";
-    burgerIcon.style.display = isOpen ? "inline" : "none";
-    closeIcon.style.display = isOpen ? "none" : "inline";
-  }
-
-  window.addEventListener("resize", () => {
-    const menu = document.getElementById("mobileMenu");
-    const burgerIcon = document.getElementById("burger-icon");
-    const closeIcon = document.getElementById("close-icon");
-
-    if (window.innerWidth > 768) {
-      menu.style.display = "none";
-      burgerIcon.style.display = "inline";
-      closeIcon.style.display = "none";
-    }
-  });
-</script>
 
 </body>
 </html>
