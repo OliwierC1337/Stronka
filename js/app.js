@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     subSection.classList.add("slide-in");
 
     currentlyOpened = type;
+    subSection.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 });
 
