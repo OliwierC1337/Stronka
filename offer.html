@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chmiel i Chrom Detailing</title>
+  <link rel="stylesheet" href="css/offerstyle.css">
+</head>
+
+<body>
+<header class="navbar">
+  <div class="nav-left">
+    <a href="about.html">O nas</a>
+    <a href="offer.html">Oferta</a>
+  </div>
+
+  <div class="nav-logo">
+    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+  </div>
+
+  <div class="nav-right">
+    <a href="#realizacje">Realizacje</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+
+
+</header>
+<header class="mobile-navbar">
+  <div class="mobile-nav-top">
+    <a href="#"><img src="img/logo.png" alt="Logo" class="mobile-logo"></a>
+    <div class="burger" onclick="toggleMobileMenu()">
+      <span id="burger-icon">☰</span>
+      <span id="close-icon" style="display: none;">✖</span>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu">
+    <a href="#onas">O nas</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+</body>
+<section class="offer-section">
+  <div class="offer-wrap">
+
+    <!-- Kategoria 1 -->
+    <div class="offer-category">
+      <h2>Mycie i pielęgnacja</h2>
+      <div class="offer-category-line"></div>
+    </div>
+
+    <article class="offer-card">
+      <!-- Głowa kafla, klikalna -->
+      <button class="offer-head" aria-expanded="false">
+        <div class="offer-icon">🧽</div>
+        <div class="offer-body">
+          <h3>Mycie detailingowe premium</h3>
+          <p>Wieloetapowe mycie karoserii i detali z bezpieczną dekontaminacją. Lakier zyskuje głębię i blask.</p>
+          <div class="offer-chips">
+            <span>Aktywna piana</span>
+            <span>Mycie bezdotykowe</span>
+            <span>Dekontaminacja</span>
+          </div>
+        </div>
+
+      </button>
+
+      <!-- Rozwijany panel -->
+      <div class="offer-details">
+        <p class="offer-long">
+          Detaliczne mycie nadkoli, felg, wnęk i emblematów. Neutralna chemia, ręczne osuszanie z użyciem ręczników z mikrofibry.
+          Idealny wybór przed aplikacją powłok ochronnych.
+        </p>
+
+        <ul class="offer-bullets">
+          <li>Pre-wash aktywną pianą + bezpieczne mycie „na dwa wiadra”</li>
+          <li>Dekontaminacja chemiczna i mechaniczna</li>
+          <li>Osuszanie oraz quick finish dla podbicia połysku</li>
+        </ul>
+
+        <div class="price-grid">
+          <div class="price-box">
+            <span class="size">Hatchback</span>
+            <span class="amount">350 zł</span>
+          </div>
+          <div class="price-box">
+            <span class="size">Sedan / Combi / Crossover</span>
+            <span class="amount">390 zł</span>
+          </div>
+          <div class="price-box">
+            <span class="size">SUV / Limousine</span>
+            <span class="amount">450 zł</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="offer-card">
+      <button class="offer-head" aria-expanded="false">
+        <div class="offer-icon">🛋️</div>
+        <div class="offer-body">
+          <h3>Czyszczenie wnętrza</h3>
+          <p>Skrupulatne odświeżenie kokpitu, tapicerki i trudno dostępnych miejsc. Naturalny efekt, bez sztucznego połysku.</p>
+          <div class="offer-chips">
+            <span>Detailing plastików</span>
+            <span>Pranie tapicerki</span>
+            <span>Neutralizacja zapachów</span>
+          </div>
+        </div>
+
+      </button>
+
+      <div class="offer-details">
+        <p class="offer-long">
+          Usuwamy zabrudzenia, kurz i osady. Plastiki zabezpieczamy satynowym dressingiem, a tapicerkę pierzemy i odświeżamy.
+        </p>
+
+        <ul class="offer-bullets">
+          <li>Odkurzanie i wydmuch trudno dostępnych miejsc</li>
+          <li>Mycie i zabezpieczenie plastików / skór</li>
+          <li>Pranie tapicerki / mat podłogowych</li>
+        </ul>
+
+        <div class="price-grid">
+          <div class="price-box">
+            <span class="size">Hatchback</span>
+            <span class="amount">400 zł</span>
+          </div>
+          <div class="price-box">
+            <span class="size">Sedan / Combi / Crossover</span>
+            <span class="amount">450 zł</span>
+          </div>
+          <div class="price-box">
+            <span class="size">SUV / Limousine</span>
+            <span class="amount">520 zł</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Kategoria 2 -->
+    <div class="offer-category">
+      <h2>Ochrona i korekta lakieru</h2>
+      <div class="offer-category-line"></div>
+    </div>
+
+    <article class="offer-card">
+      <button class="offer-head" aria-expanded="false">
+        <div class="offer-icon">✨</div>
+        <div class="offer-body">
+          <h3>Korekta lakieru</h3>
+          <p>Usuwanie zmatowień i mikrozarysowań. Dobieramy etapowość korekty do stanu powłoki.</p>
+          <div class="offer-chips">
+            <span>1–3 etapy</span><span>Lampy inspekcyjne</span><span>Wykończenie „finish”</span>
+          </div>
+        </div>
+
+      </button>
+
+      <div class="offer-details">
+        <p class="offer-long">Przywracamy klarowność i głębię. Każdy etap kończony jest kontrolą i delikatnym finishem.</p>
+        <ul class="offer-bullets">
+          <li>Pomiar lakieru i dobór past/padów</li>
+          <li>Etapy: cut, refine, finish (wg potrzeb)</li>
+          <li>Odtłuszczenie i ochrona nawierzchni</li>
+        </ul>
+        <div class="price-grid">
+          <div class="price-box"><span class="size">Hatchback</span><span class="amount">od 900 zł</span></div>
+          <div class="price-box"><span class="size">Sedan / Combi / Crossover</span><span class="amount">od 1 200 zł</span></div>
+          <div class="price-box"><span class="size">SUV / Limousine</span><span class="amount">od 1 500 zł</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="offer-card">
+      <button class="offer-head" aria-expanded="false">
+        <div class="offer-icon">🛡️</div>
+        <div class="offer-body">
+          <h3>Powłoki ochronne</h3>
+          <p>Powłoki ceramiczne/kwarcowe chronią lakier przed chemią i UV, ułatwiają mycie i podbijają połysk.</p>
+          <div class="offer-chips">
+            <span>Hydrofobowość</span><span>Ochrona UV</span><span>Łatwe mycie</span>
+          </div>
+        </div>
+
+      </button>
+
+      <div class="offer-details">
+        <p class="offer-long">Aplikacja po odpowiednim przygotowaniu i odtłuszczeniu lakieru. Trwałość dobierana do potrzeb.</p>
+        <ul class="offer-bullets">
+          <li>Przygotowanie: mycie + dekontaminacja + ewentualna korekta</li>
+          <li>Aplikacja powłoki ceramicznej/kwarcowej</li>
+          <li>Instrukcja pielęgnacji po odbiorze</li>
+        </ul>
+        <div class="price-grid">
+          <div class="price-box"><span class="size">Hatchback</span><span class="amount">od 1 200 zł</span></div>
+          <div class="price-box"><span class="size">Sedan / Combi / Crossover</span><span class="amount">od 1 400 zł</span></div>
+          <div class="price-box"><span class="size">SUV / Limousine</span><span class="amount">od 1 700 zł</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Kategoria 3 -->
+    <div class="offer-category">
+      <h2>Pakiety specjalne</h2>
+      <div class="offer-category-line"></div>
+    </div>
+
+    <article class="offer-card">
+      <button class="offer-head" aria-expanded="false">
+        <div class="offer-icon">🧰</div>
+        <div class="offer-body">
+          <h3>Przygotowanie do sprzedaży</h3>
+          <p>Kompleksowe odświeżenie, które zwiększa atrakcyjność auta w ogłoszeniu.</p>
+          <div class="offer-chips">
+            <span>Detailing wnętrza</span><span>Mycie + quick finish</span><span>Zdjęcia „po”</span>
+          </div>
+        </div>
+
+      </button>
+
+      <div class="offer-details">
+        <p class="offer-long">Szybki, ale skuteczny pakiet. Auto prezentuje się świeżo i schludnie, gotowe do oględzin.</p>
+        <ul class="offer-bullets">
+          <li>Mycie zewnętrzne + quick finish</li>
+          <li>Odkurzanie i odświeżenie wnętrza</li>
+          <li>Wyczyszczenie szyb i detali</li>
+        </ul>
+        <div class="price-grid">
+          <div class="price-box"><span class="size">Hatchback</span><span class="amount">od 550 zł</span></div>
+          <div class="price-box"><span class="size">Sedan / Combi / Crossover</span><span class="amount">od 650 zł</span></div>
+          <div class="price-box"><span class="size">SUV / Limousine</span><span class="amount">od 750 zł</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="map-container">
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.6515324796524!2d19.436310413297562!3d50.48483067148027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471723c87b27900b%3A0x15855e10c2575d2d!2sMylna%206A%2C%2042-400%20Zawiercie!5e0!3m2!1spl!2spl!4v1753192196095!5m2!1spl!2spl"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="map-info">
+      <h2><span style="font-family: 'Impact';">ZNAJDŹ NASZE</span> <span style="color:#ff00d4; font-family: 'Impact';">STUDIO</span></h2>
+      <p><strong>Adres:</strong><br>Mylna 6A, 42-400 Zawiercie</p>
+      <p><strong>Telefon:</strong><br>+48 500 600 600</p>
+      <p><strong>Godziny otwarcia:</strong><br>Poniedziałek – Piątek: 9:00 – 18:00<br>Sobota: 10:00 – 16:00<br>Niedziela: tylko po umówieniu</p>
+      <a href="https://maps.google.com/?q=Mylna+6A+Zawiercie" target="_blank" class="btn gradient">WYZNACZ TRASĘ</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Chmiel i Chrom Detailing. Wszelkie prawa zastrzeżone.</p>
+</footer>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.offer-card').forEach(card => {
+      const head    = card.querySelector('.offer-head');
+      const details = card.querySelector('.offer-details');
+
+      // start: zamknięte
+      if (details) details.style.maxHeight = '0px';
+
+      head.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+
+        // (opcjonalnie) zamknij inne karty
+        document.querySelectorAll('.offer-card.open').forEach(other => {
+          if (other !== card) {
+            other.classList.remove('open');
+            const d = other.querySelector('.offer-details');
+            if (d) d.style.maxHeight = '0px';
+            const h = other.querySelector('.offer-head');
+            if (h) h.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // przełącz aktualny
+        card.classList.toggle('open', !isOpen);
+        head.setAttribute('aria-expanded', String(!isOpen));
+
+        if (!isOpen) {
+          // rozwiń
+          if (details) {
+            details.style.maxHeight = details.scrollHeight + 'px';
+          }
+          // auto-scroll z lekkim offsetem (dopasuj -80 do wysokości sticky nawigacji)
+          const top = card.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
+        } else {
+          // zwiń
+          if (details) {
+            details.style.maxHeight = '0px';
+          }
+        }
+      });
+
+      // po zmianie rozmiaru przelicz wysokość, jeśli otwarte
+      window.addEventListener('resize', () => {
+        if (card.classList.contains('open') && details) {
+          details.style.maxHeight = details.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+</script>
