@@ -174,7 +174,7 @@
       </div>
     </article>
 
-    <article class="offer-card">
+    <article id="powłoka-roczna"  class="offer-card">
       <button class="offer-head" aria-expanded="false">
         <div class="offer-icon">🛡️</div>
         <div class="offer-body">
@@ -267,53 +267,71 @@
 </html>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+
+    function openCard(card) {
+      const details = card.querySelector('.offer-details');
+      const head = card.querySelector('.offer-head');
+
+      // zamknij inne
+      document.querySelectorAll('.offer-card.open').forEach(other => {
+        if (other !== card) {
+          other.classList.remove('open');
+          const d = other.querySelector('.offer-details');
+          if (d) d.style.maxHeight = '0px';
+          const h = other.querySelector('.offer-head');
+          if (h) h.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // otwórz bieżący
+      card.classList.add('open');
+      head?.setAttribute('aria-expanded', 'true');
+      if (details) {
+        details.style.maxHeight = details.scrollHeight + 'px';
+      }
+
+      // przewiń do niego (dopasuj offset)
+      const top = card.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    // kliknięcia
     document.querySelectorAll('.offer-card').forEach(card => {
       const head    = card.querySelector('.offer-head');
       const details = card.querySelector('.offer-details');
 
-      // start: zamknięte
       if (details) details.style.maxHeight = '0px';
 
       head.addEventListener('click', () => {
         const isOpen = card.classList.contains('open');
-
-        // (opcjonalnie) zamknij inne karty
-        document.querySelectorAll('.offer-card.open').forEach(other => {
-          if (other !== card) {
-            other.classList.remove('open');
-            const d = other.querySelector('.offer-details');
-            if (d) d.style.maxHeight = '0px';
-            const h = other.querySelector('.offer-head');
-            if (h) h.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        // przełącz aktualny
-        card.classList.toggle('open', !isOpen);
-        head.setAttribute('aria-expanded', String(!isOpen));
-
-        if (!isOpen) {
-          // rozwiń
-          if (details) {
-            details.style.maxHeight = details.scrollHeight + 'px';
-          }
-          // auto-scroll z lekkim offsetem (dopasuj -80 do wysokości sticky nawigacji)
-          const top = card.getBoundingClientRect().top + window.scrollY - 80;
-          window.scrollTo({ top, behavior: 'smooth' });
+        if (isOpen) {
+          card.classList.remove('open');
+          if (details) details.style.maxHeight = '0px';
+          head.setAttribute('aria-expanded', 'false');
         } else {
-          // zwiń
-          if (details) {
-            details.style.maxHeight = '0px';
-          }
+          openCard(card);
         }
       });
 
-      // po zmianie rozmiaru przelicz wysokość, jeśli otwarte
+      // po zmianie rozmiaru
       window.addEventListener('resize', () => {
         if (card.classList.contains('open') && details) {
           details.style.maxHeight = details.scrollHeight + 'px';
         }
       });
     });
+
+    // jeśli jest hash w adresie — otwórz ten kafel
+    if (window.location.hash) {
+      const hash = decodeURIComponent(window.location.hash.substring(1));
+      const target = document.getElementById(hash);
+      if (target && target.classList.contains('offer-card')) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+          openCard(target);
+        }, 300); // opóźnienie, żeby layout zdążył się ustawić
+      }
+    }
+
   });
 </script>

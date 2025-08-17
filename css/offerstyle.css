@@ -263,8 +263,8 @@ footer {
 
 /* Treść */
 .offer-body h3 {
-  font-family: 'Impact', sans-serif;
-  letter-spacing: .5px;
+  font-family: sans-serif;
+
   font-size: 26px;
   margin: 0 0 8px;
   color: #ffffff;
