@@ -360,8 +360,8 @@ footer {
 }
 
 .sub-upgrade-box {
-  min-width: 250px;
-  max-width: 251px;
+  min-width: 275px;
+  max-width: 276px;
   height: 220px; /* zwiększona wysokość żeby tekst miał miejsce */
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid #ff00d4;
@@ -376,6 +376,7 @@ footer {
   align-items: center;
   text-align: center;
   transition: transform 0.3s;
+  text-decoration: none;
 }
 
 .sub-icon {

@@ -45,20 +45,102 @@ document.addEventListener("DOMContentLoaded", function () {
       { icon: '🏆', text: 'Grafenowa powłoka 9-letnia',desc: 'Maksymalne nasycenie koloru i głęboki połysk. Wyjątkowa śliskość, świetna hydrofobowość i doskonałe właściwości samooczyszczania.', price: 'od 2 500,00 zł' }
     ],
     interior: [
-      'Odkurzanie',
-      'Pranie tapicerki',
-      'Detailing plastików'
+      {icon: '💎',
+    text: 'Prestige Inside',
+    desc: 'Dokładne odkurzanie wnętrza, czyszczenie plastików oraz szyb wewnątrz, pranie tapicerki lub pielęgnacja skór oraz wykończenie dressingiem.',
+    price: 'od 400 zł'
+},
+  {
+    icon: '✨',
+      text: 'Comfort Inside',
+    desc: 'Odkurzanie wnętrza, czyszczenie plastików oraz szyb i wykończenie dressingiem.',
+    price: 'od 200 zł'
+  },
+  {
+    icon: '🧹',
+      text: 'Quick Inside',
+    desc: 'Odkurzanie wnętrza i czyszczenie plastików środkiem 2 w 1, który czyści i zabezpiecza.',
+    price: 'od 100 zł'
+  }
     ],
     paint: [
-      '1-etapowa korekta',
-      '2-etapowa korekta',
-      '3-etapowa korekta'
+      {
+        icon: '🏆',
+        text: 'Komplet Mycie + Wnętrze',
+        desc: 'Pakiet łączący mycie z pielęgnacją wnętrza samochodu.',
+        price: 'od 150 zł'
+      },
+      {
+        icon: '🚿',
+        text: 'Mycie lakieru',
+        desc: 'Bezpieczne, dokładne mycie karoserii z dbałością o każdy detal.',
+        price: 'od 100 zł'
+      },
+      {
+        icon: '✨',
+        text: 'Korekta lakieru',
+        desc: 'Usuwanie rys i zmatowień, przywrócenie blasku i głębi koloru.',
+        price: 'Cena zależna od poziomu korekty'
+      },
+      {
+        icon: '⚙️',
+        text: 'Detailing felg',
+        desc: 'Profesjonalne czyszczenie i ochrona powłoką ceramiczną felg, także w trudno dostępnych miejscach.',
+        price: 'od 250 zł'
+      },
+      {
+        icon: '🩹',
+        text: 'Zaprawki lakiernicze',
+        desc: 'Maskowanie drobnych ubytków i odprysków lakieru.',
+        price: 'od 80 zł'
+      },
+      {
+        icon: '💧',
+        text: 'Niewidzialna wycieraczka',
+        desc: 'Powłoka hydrofobowa na szyby poprawiająca widoczność podczas deszczu.',
+        price: 'od 60 zł '
+      },
+      {
+        icon: '🔦',
+        text: 'Renowacja reflektorów',
+        desc: 'Przywrócenie przejrzystości i pełnej jasności reflektorów.',
+        price: 'od 150 zł'
+      }
     ],
+
     full: [
-      'Pakiet Silver',
-      'Pakiet Gold',
-      'Pakiet Premium'
+      {
+        icon: '🧼',
+        text: 'Pakiet Wosk & Glinka',
+        desc: 'Mycie, glinkowanie oraz zabezpieczenie woskiem – efekt gładkiej i błyszczącej powierzchni.',
+        price: 'od 500,00 zł'
+      },
+      {
+        icon: '🚗',
+        text: 'Pakiet Sprzedażowy',
+        desc: 'Kompleksowe przygotowanie auta do sprzedaży: mycie, dekontaminacja, glinkowanie, korekta lakieru 3w1, czyszczenie wnętrza oraz dressing plastików i opon.',
+        price: '700,00 zł'
+      },
+      {
+        icon: '✨',
+        text: 'Pakiet Peeling',
+        desc: 'Mycie, dekontaminacja chemiczna, sealant, pielęgnacja plastików zewnętrznych, dressing opon, czyszczenie szyb wewnątrz i na zewnątrz oraz podstawowe czyszczenie wnętrza.',
+        price: '300,00 zł'
+      },
+      {
+        icon: '🏁',
+        text: 'Pakiet Odświeżający z Powłoką',
+        desc: 'Mycie, dekontaminacja, glinka, polerka, roczna powłoka ceramiczna, powłoka na szyby, dressing opon i czyszczenie wnętrza.',
+        price: '1 000,00 zł'
+      },
+      {
+        icon: '💎',
+        text: 'Deluxe Outside',
+        desc: 'Mycie, dekontaminacja, powłoka na szyby oraz fronty felg, aplikacja 5 letniej powłoki ceramicznej, dressing plastików i opon oraz podstawowe czyszczenie wnętrza.',
+        price: '3 000,00 zł'
+      }
     ]
+
   };
 
   let currentlyOpened = null;
