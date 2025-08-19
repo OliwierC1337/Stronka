@@ -34,6 +34,19 @@ function toggleDetails(clickedBox) {
   clickedSub.classList.toggle('hidden');
 }
 document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.sub-upgrade-section').forEach(scroller => {
+    scroller.addEventListener('wheel', (e) => {
+      // przewijamy poziomo tylko gdy zawartość szersza od kontenera
+      if (scroller.scrollWidth <= scroller.clientWidth) return;
+
+      // jeżeli użytkownik kręci kółkiem „w pionie”, przejmij i przewijaj w poziomie
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault(); // blokuje pionowy scroll strony
+        scroller.scrollBy({ left: e.deltaY, behavior: 'auto' });
+      }
+      // jeżeli urządzenie daje deltaX (np. gładzik), przeglądarka i tak przewinie nativnie
+    }, { passive: false });
+  });
   const subSection = document.getElementById("sub-upgrade-section");
 
   const subContent = {
@@ -119,25 +132,25 @@ document.addEventListener("DOMContentLoaded", function () {
         icon: '🚗',
         text: 'Pakiet Sprzedażowy',
         desc: 'Kompleksowe przygotowanie auta do sprzedaży: mycie, dekontaminacja, glinkowanie, korekta lakieru 3w1, czyszczenie wnętrza oraz dressing plastików i opon.',
-        price: '700,00 zł'
+        price: 'od 700,00 zł'
       },
       {
         icon: '✨',
         text: 'Pakiet Peeling',
         desc: 'Mycie, dekontaminacja chemiczna, sealant, pielęgnacja plastików zewnętrznych, dressing opon, czyszczenie szyb wewnątrz i na zewnątrz oraz podstawowe czyszczenie wnętrza.',
-        price: '300,00 zł'
+        price: 'od 300,00 zł'
       },
       {
         icon: '🏁',
         text: 'Pakiet Odświeżający z Powłoką',
         desc: 'Mycie, dekontaminacja, glinka, polerka, roczna powłoka ceramiczna, powłoka na szyby, dressing opon i czyszczenie wnętrza.',
-        price: '1 000,00 zł'
+        price: 'od 1 000,00 zł'
       },
       {
         icon: '💎',
         text: 'Deluxe Outside',
         desc: 'Mycie, dekontaminacja, powłoka na szyby oraz fronty felg, aplikacja 5 letniej powłoki ceramicznej, dressing plastików i opon oraz podstawowe czyszczenie wnętrza.',
-        price: '3 000,00 zł'
+        price: 'od 3 000,00 zł'
       }
     ]
 

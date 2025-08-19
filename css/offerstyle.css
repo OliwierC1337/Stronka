@@ -416,11 +416,26 @@ footer {
 .offer-bullets li { margin-bottom: 6px; }
 
 /* Cennik */
+.price-grid-two {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center; /* wyśrodkowanie boxów */
+  margin-top: 6px;
+}
+
+/* Opcjonalnie: ograniczamy maksymalną szerokość,
+   żeby przy 1 lub 2 boxach nie rozciągały się na całą stronę */
+
 .price-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
   gap: 14px;
   margin-top: 6px;
+}
+.price-grid-two .price-box {
+  flex: 0 0 220px; /* stała minimalna szerokość boxa */
+  max-width: 280px; /* opcjonalne ograniczenie */
 }
 
 .price-box {
