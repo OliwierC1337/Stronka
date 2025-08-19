@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const subContent = {
     ceramic: [
-      { icon: '🕐', text: 'Powłoka roczna',desc :'Wysoki połysk, lekkie przyciemnienie i pogłębienie koloru, superhydrofobowy efekt.', price: 'od 1 200,00 zł' },
-      { icon: '📅', text: 'Powłoka 2-letnia',desc: 'Superśliska, superhydrofobowa warstwa ochronna. Delikatne przyciemnienie, wysoki połysk i wyraźna głębia koloru.', price: 'od 1 600,00 zł' },
-      { icon: '📆', text: 'Powłoka 3-letnia',desc: 'Ekstremalny, lustrzany połysk typu „show car”. Jedwabiście gładka powierzchnia i silna hydrofobowość.', price: 'od 1 900,00 zł' },
-      { icon: '🛡️', text: 'Hybrydowa powłoka 5-letnia',desc: 'Intensywna głębia koloru i efekt „wet look”. Ekstremalny połysk, niesamowita śliskość, hydrofobowość i właściwości samooczyszczania.', price: 'od 2 200,00 zł' },
-      { icon: '🏆', text: 'Grafenowa powłoka 9-letnia',desc: 'Maksymalne nasycenie koloru i głęboki połysk. Wyjątkowa śliskość, świetna hydrofobowość i doskonałe właściwości samooczyszczania.', price: 'od 2 500,00 zł' }
+      { icon: '🕐', text: 'Powłoka roczna',desc :'Wysoki połysk, lekkie przyciemnienie i pogłębienie koloru, superhydrofobowy efekt.', price: 'od 1 000,00 zł' },
+      { icon: '📅', text: 'Powłoka 2-letnia',desc: 'Superśliska, superhydrofobowa warstwa ochronna. Delikatne przyciemnienie, wysoki połysk i wyraźna głębia koloru.', price: 'od 1 700,00 zł' },
+      { icon: '📆', text: 'Powłoka 3-letnia',desc: 'Ekstremalny, lustrzany połysk typu „show car”. Jedwabiście gładka powierzchnia i silna hydrofobowość.', price: 'od 2 200,00 zł' },
+      { icon: '🛡️', text: 'Hybrydowa powłoka 5-letnia',desc: 'Intensywna głębia koloru i efekt „wet look”. Ekstremalny połysk, niesamowita śliskość, hydrofobowość i właściwości samooczyszczania.', price: 'od 2 800,00 zł' },
+      { icon: '🏆', text: 'Grafenowa powłoka 9-letnia',desc: 'Maksymalne nasycenie koloru i głęboki połysk. Wyjątkowa śliskość, świetna hydrofobowość i doskonałe właściwości samooczyszczania.', price: 'od 3 200,00 zł' }
     ],
     interior: [
       {icon: '💎',
