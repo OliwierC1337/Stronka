@@ -349,7 +349,6 @@ footer {
   align-items: center;
   justify-content: flex-start;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-inline: contain;
   scroll-behavior: smooth;
 
 }
