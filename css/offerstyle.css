@@ -518,8 +518,10 @@ footer {
   letter-spacing: .2px;
 
   /* jeśli używasz gradientu jak na screenie – zostaw; inaczej możesz mieć złoty */
-  background: linear-gradient(135deg, #ff39a3 0%, #ff8a00 100%);
-  color: #141414;
+  border: 1px solid #00f0ff;
+  border-radius: 14px;
+  background: rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
 }
 
 /* 5) Opcjonalnie: bez podskakiwania na hover, tylko cień */
