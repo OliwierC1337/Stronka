@@ -8,6 +8,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -235,17 +236,17 @@ footer {
   align-items: center;
   gap: 20px;
   padding: 24px 26px;
-  border: 1px solid #00f0ff;
+  border: 1px solid #00e0d6; /* turkus zamiast czystego cyan */
   border-radius: 14px;
-  background: rgba(0,0,0,0.35);
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+  background: rgba(23, 29, 39, 0.85); /* ciemny granat/grafit */
+  box-shadow: 0 0 14px rgba(0, 224, 214, 0.25);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
 .offer-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 24px rgba(0, 240, 255, 0.4);
-  border-color: #27f0ff;
+  box-shadow: 0 0 24px rgba(123, 97, 255, 0.45); /* fiolet przy hover */
+  border-color: #7b61ff;
 }
 
 /* Ikona */
@@ -256,25 +257,24 @@ footer {
   display: grid;
   place-items: center;
   font-size: 34px;
-  background: radial-gradient(closest-side, rgba(0,240,255,0.18), rgba(0,240,255,0.05));
-  border: 1px solid rgba(0,240,255,0.35);
-  box-shadow: inset 0 0 18px rgba(0,240,255,0.2);
+  background: radial-gradient(closest-side, rgba(0,224,214,0.18), rgba(123,97,255,0.08));
+  border: 1px solid rgba(0,224,214,0.35);
+  box-shadow: inset 0 0 18px rgba(123,97,255,0.25);
 }
 
 /* Treść */
 .offer-body h3 {
-  font-family: sans-serif;
-
+  font-family: 'Inter', sans-serif;
   font-size: 26px;
   margin: 0 0 8px;
   color: #ffffff;
-  text-shadow: 0 0 6px rgba(0, 240, 255, .25);
+  text-shadow: 0 0 6px rgba(123, 97, 255, .25); /* fioletowy glow */
 }
 
 .offer-body p {
   margin: 0 0 14px;
   line-height: 1.6;
-  color: #d8d8d8;
+  color: #cfd7e6; /* jaśniejszy, bardziej neutralny szary */
   font-size: 15.5px;
 }
 
@@ -291,20 +291,13 @@ footer {
   font-size: 13px;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(90deg, rgba(0,240,255,0.25), rgba(255,0,212,0.28));
-  border: 1px solid rgba(0,240,255,0.45);
-  box-shadow: 0 0 10px rgba(0,240,255,0.25);
+  background: linear-gradient(90deg, rgba(0,224,214,0.25), rgba(123,97,255,0.28));
+  border: 1px solid rgba(0,224,214,0.45);
+  box-shadow: 0 0 10px rgba(123,97,255,0.25);
   white-space: nowrap;
 }
 
-/* Pionowy akcent po prawej (neon) */
-.offer-accent {
-  width: 6px;
-  height: 100%;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #ff00d4, #ff9100);
-  box-shadow: 0 0 16px rgba(255, 0, 212, .35), 0 0 22px rgba(255, 145, 0, .3);
-}
+
 
 /* Responsywność */
 @media (max-width: 992px) {
@@ -385,25 +378,25 @@ footer {
 
 /* PANEL – rozwijany w dół */
 .offer-details {
-  background: rgba(0,0,0,0.35);
-  border-top: 1px solid rgba(0,240,255,0.35);
-  padding: 0 26px;             /* bez pionowego paddingu gdy zamknięty */
-  max-height: 0;               /* animowana wysokość */
-  overflow: hidden;            /* chowanie treści */
+  background: rgba(23, 29, 39, 0.85); /* ciemny grafit */
+  border-top: 1px solid rgba(0, 224, 214, 0.35); /* turkus */
+  padding: 0 26px;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
   transition: max-height .45s ease, opacity .35s ease, padding .25s ease, margin .25s ease;
 }
 
 .offer-card.open .offer-details {
   opacity: 1;
-  padding: 18px 26px 22px;     /* pojawia się dopiero po otwarciu */
+  padding: 18px 26px 22px;
   margin-top: 8px;
 }
 
 /* Dłuższy opis + listy */
 .offer-long {
   margin: 0 0 12px;
-  color: #d8d8d8;
+  color: #cfd7e6; /* jasny szary, czytelny */
   line-height: 1.6;
   font-size: 15.5px;
 }
@@ -411,7 +404,7 @@ footer {
 .offer-bullets {
   margin: 0 0 14px;
   padding-left: 18px;
-  color: #e6e6e6;
+  color: #e5eaf5;
 }
 .offer-bullets li { margin-bottom: 6px; }
 
@@ -420,12 +413,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  justify-content: center; /* wyśrodkowanie boxów */
+  justify-content: center;
   margin-top: 6px;
 }
-
-/* Opcjonalnie: ograniczamy maksymalną szerokość,
-   żeby przy 1 lub 2 boxach nie rozciągały się na całą stronę */
 
 .price-grid {
   display: grid;
@@ -434,22 +424,22 @@ footer {
   margin-top: 6px;
 }
 .price-grid-two .price-box {
-  flex: 0 0 220px; /* stała minimalna szerokość boxa */
-  max-width: 280px; /* opcjonalne ograniczenie */
+  flex: 0 0 220px;
+  max-width: 280px;
 }
 
 .price-box {
-  background: rgba(255, 204, 0, 0.08);
-  border: 1px solid #ffc400;
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0,224,214,0.15), rgba(123,97,255,0.15));
+  border: 1px solid rgba(0,224,214,0.45);
+  border-radius: 12px;
   padding: 14px 12px;
   text-align: center;
-  box-shadow: 0 0 12px rgba(255, 196, 0, .18);
+  box-shadow: 0 0 12px rgba(123,97,255,.25);
 }
 
 .price-box .size {
   display: block;
-  color: #ffd54f;
+  color: #00e0d6; /* turkus */
   font-weight: 700;
   margin-bottom: 6px;
   font-size: 14px;
@@ -460,10 +450,12 @@ footer {
   font-weight: 800;
   color: #fff;
 }
+
 .offer-head {
   position: relative;
   z-index: 1;
 }
+
 /* RWD */
 @media (max-width: 992px) {
   .offer-head { grid-template-columns: 70px 1fr 8px; padding: 20px 22px; }
@@ -473,56 +465,54 @@ footer {
 @media (max-width: 640px) {
   .offer-head { grid-template-columns: 56px 1fr 6px; gap: 14px; padding: 16px 18px; }
 }
+
 .addons-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* min szer. kafla */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 16px;
   overflow: visible;
 }
 
-/* 2) Kafelek */
+/* Kafelek */
 .addon-tile {
-  box-sizing: border-box;                 /* kluczowe przy paddingach */
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr auto;        /* label | cena */
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 12px;
   width: 100%;
-  min-width: 0;                           /* pozwól zawartości się zawęzić w kolumnie 1fr */
+  min-width: 0;
 
-  /* Twoje kolory/wygląd – zostaw jak masz, to tylko przykład */
-  background: #1e1f23;
-  color: #f1f1f1;
+  background: #171d27; /* ciemny grafit */
+  color: #e5eaf5;
   border-radius: 10px;
   padding: 10px 12px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 2px 8px rgba(0,0,0,.25);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), 0 2px 8px rgba(0,0,0,.25);
 }
 
-/* 3) Label może się łamać, nie wypycha kafla */
 .addon-label {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.25;
-  white-space: normal;               /* było nowrap → może się zawijać */
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* 4) Pigułka ceny nie kurczy się i trzyma jedną linię */
 .addon-price {
-  flex-shrink: 0;                    /* na wszelki wypadek przy flex-ach */
+  flex-shrink: 0;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 8px 12px;
   font-weight: 800;
   letter-spacing: .2px;
 
-  /* jeśli używasz gradientu jak na screenie – zostaw; inaczej możesz mieć złoty */
-  border: 1px solid #00f0ff;
-  border-radius: 14px;
-  background: rgba(0, 240, 255, 0.25);
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+  border: 1px solid #7b61ff; /* fiolet */
+  background: linear-gradient(135deg, rgba(0,224,214,0.25), rgba(123,97,255,0.25));
+  box-shadow: 0 0 14px rgba(123,97,255,0.25);
+  color: #fff;
 }
+
 
 /* 5) Opcjonalnie: bez podskakiwania na hover, tylko cień */
 .addon-tile:hover {

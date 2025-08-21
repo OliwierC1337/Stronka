@@ -9,6 +9,15 @@ function toggleMobileMenu() {
   burgerIcon.style.display = isOpen ? "inline" : "none";
   closeIcon.style.display = isOpen ? "none" : "inline";
 }
+function closeMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const burgerIcon = document.getElementById("burger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  menu.style.display = "none";
+  burgerIcon.style.display = "inline";
+  closeIcon.style.display = "none";
+}
 
 window.addEventListener("resize", () => {
   const menu = document.getElementById("mobileMenu");
@@ -47,6 +56,25 @@ document.addEventListener("DOMContentLoaded", function () {
       // jeżeli urządzenie daje deltaX (np. gładzik), przeglądarka i tak przewinie nativnie
     }, { passive: false });
   });
+  const menu = document.getElementById("mobileMenu");
+
+  // Dla każdego linku w mobilnym menu
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+
+      // Jeżeli to link do sekcji na tej samej stronie (#...)
+      if (href && href.startsWith("#")) {
+        e.preventDefault(); // nie przeskakuj natychmiast
+        const target = document.querySelector(href);
+        closeMobileMenu();
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Link do innej strony — po prostu zamknij menu i pozwól przejść
+        closeMobileMenu();
+      }
+    });
+  });
   const subSection = document.getElementById("sub-upgrade-section");
 
   const subContent = {
@@ -58,24 +86,26 @@ document.addEventListener("DOMContentLoaded", function () {
       { icon: '🏆', text: 'Grafenowa powłoka 9-letnia',desc: 'Maksymalne nasycenie koloru i głęboki połysk. Wyjątkowa śliskość, świetna hydrofobowość i doskonałe właściwości samooczyszczania.', price: 'od 3 200,00 zł' }
     ],
     interior: [
-      {icon: '💎',
-    text: 'Prestige Inside',
-    desc: 'Dokładne odkurzanie wnętrza, czyszczenie plastików oraz szyb wewnątrz, pranie tapicerki lub pielęgnacja skór oraz wykończenie dressingiem.',
-    price: 'od 400 zł'
-},
-  {
-    icon: '✨',
-      text: 'Comfort Inside',
-    desc: 'Odkurzanie wnętrza, czyszczenie plastików oraz szyb i wykończenie dressingiem.',
-    price: 'od 200 zł'
-  },
-  {
-    icon: '🧹',
-      text: 'Quick Inside',
-    desc: 'Odkurzanie wnętrza i czyszczenie plastików środkiem 2 w 1, który czyści i zabezpiecza.',
-    price: 'od 100 zł'
-  }
+      {
+        icon: '🧹',
+        text: 'Quick Inside',
+        desc: 'Odkurzanie wnętrza i czyszczenie plastików środkiem 2 w 1, który czyści i zabezpiecza.',
+        price: 'od 100 zł'
+      },
+      {
+        icon: '✨',
+        text: 'Comfort Inside',
+        desc: 'Odkurzanie wnętrza, czyszczenie plastików oraz szyb i wykończenie dressingiem.',
+        price: 'od 200 zł'
+      },
+      {
+        icon: '💎',
+        text: 'Prestige Inside',
+        desc: 'Dokładne odkurzanie wnętrza, czyszczenie plastików oraz szyb wewnątrz, pranie tapicerki lub pielęgnacja skór oraz wykończenie dressingiem.',
+        price: 'od 400 zł'
+      }
     ],
+
     paint: [
       {
         icon: '🏆',
